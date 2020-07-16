@@ -21,7 +21,7 @@
 </head>
 <body>
 <?php include(INCLUDE_PATH . "/layouts/navbar.php") ?>
-<?php include(INCLUDE_PATH . "/layouts/messages.php") ?>
+<?php //include(INCLUDE_PATH . "/layouts/messages.php") ?>
 <div class="container" style="margin-bottom: 150px;">
     <input type="hidden" name="class_id" value="<?php echo $class_id ?>">
     <div id="questions" style="display: none;">

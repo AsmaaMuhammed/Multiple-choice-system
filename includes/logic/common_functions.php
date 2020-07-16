@@ -34,9 +34,13 @@
         header('location: ' . BASE_URL . 'admin/dashboard.php');
       } else {
             $classId = $user['class_id'];
+            $adminEmail = getAdminEmail($classId);
+            $_SESSION['adminEmail'] = $adminEmail;
+            sendEmail();
             $questions = getQuestionsByClassId($classId);
             $_SESSION['questions'] = $questions;
             $_SESSION['questions_count'] = count($questions);
+            sendEmail();
         header('location: ' . BASE_URL . 'admin/users/userExam.php');
       }
       exit(0);
@@ -192,4 +196,39 @@ function getAllTests(){
     $tests = getMultipleRecords($sql);
 
     return $tests;
+}
+function getAdminEmail($classId)
+{
+    $adminEmail = '';
+    $sql = "SELECT u.id,u.email
+            FROM users u 
+            WHERE u.role_id = 1 and u.class_id=? LIMIT 1";
+    $user = getSingleRecord($sql, 'i', [$classId]);
+
+    if (!empty($user)) {
+            $adminEmail = $user['email'];
+    }
+    else
+    {
+        $sql = "SELECT u.id,u.email
+            FROM users u 
+            WHERE u.role_id = ? LIMIT 1";
+
+        $user = getSingleRecord($sql, 'i', [1]);
+        if (!empty($user)) {
+            $adminEmail = $user['email'];
+        }
+    }
+    return $adminEmail;
+}
+function sendEmail()
+{
+    $name = isset($_SESSION['user'])?$_SESSION['user']['username']:'';
+    $grade = '';
+    $to_email = isset($_SESSION['adminEmail'])?$_SESSION['adminEmail']:'';
+    $subject = 'Answering Quiz';
+    $message = $name.' finished the quiz with Grade '.$grade;
+    $headers = FROM_EMAIL;
+    $res = mail($to_email,$subject,$message,$headers);
+    return $res;
 }

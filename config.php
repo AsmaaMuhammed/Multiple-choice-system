@@ -10,6 +10,7 @@
 	define ('ROOT_PATH', realpath(dirname(__FILE__))); // path to the root folder
 	define ('INCLUDE_PATH', realpath(dirname(__FILE__) . '/includes' )); // Path to includes folder
 	define('BASE_URL', 'http://localhost/multiple-choice-quiz/'); // the home url of the website
+	define('FROM_EMAIL', 'someone@example'); // someone@example.com from email
 
 	function getMultipleRecords($sql, $types = null, $params = []) {
 		global $conn;
