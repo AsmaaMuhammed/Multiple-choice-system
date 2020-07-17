@@ -186,7 +186,7 @@ if (isset($_POST['answer_exam'])) {
     $userId = $_POST['user_id'];
     $testId = $_POST['test_id'];
 
-    $conn = new mysqli("localhost", "root", "123", "multiple-choice-quiz");
+    $conn = new mysqli(SERVER,USER, PASSWORD, DB);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -210,7 +210,7 @@ if (isset($_POST['exam_status'])) {
     $userId = $_POST['user_id'];
     $testId = $_POST['test_id'];
 
-    $conn = new mysqli("localhost", "root", "123", "multiple-choice-quiz");
+    $conn = new mysqli(SERVER,USER, PASSWORD, DB);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
