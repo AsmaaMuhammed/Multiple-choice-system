@@ -11,6 +11,10 @@
   $isEditing = false;
   $users = array();
   $errors = array();
+define ('SERVER', "localhost");
+define ('USER',  "root");
+define ('PASSWORD',"123");
+define ('DB', "multiple-choice-quiz");
 
   function getAllRoles(){
     global $conn;
@@ -179,8 +183,9 @@ if (isset($_POST['answer_exam'])) {
     $questionsAnswers = $_POST['answers'];
     $questionsGrads = $_POST['grads'];
     //send session data in post request
-    $userId = $_SESSION['user']['id'];
-    $testId = $_SESSION['user']['test_id'];
+    $userId = $_POST['user_id'];
+    $testId = $_POST['test_id'];
+
     $conn = new mysqli("localhost", "root", "123", "multiple-choice-quiz");
     // Check connection
     if ($conn->connect_error) {
@@ -190,25 +195,54 @@ if (isset($_POST['answer_exam'])) {
     {
         //echo $i;
         $sql = "INSERT INTO users_answers SET user_id=?, test_id=?, ques_id=?, user_answer=?, user_grade=?";
-
-        $params = [$user_id, $testId, $questionsIds[$i], $questionsAnswers[$i], $questionsGrads[$i]];
+        $params = [$userId, $testId, $questionsIds[$i], $questionsAnswers[$i], $questionsGrads[$i]];
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('iiisi', ...$params);
         $result = $stmt->execute();
-//        $result = modifyRecord($sql, 'iiisi', [$user_id, $testId, $row[0], $row[1], $row[2]]);
-
+//        $user = getSingleRecord($sql, 'iiisi', $params);
     }
     $stmt->close();
-    if($result){
-        print_r($result);
-    } else {
-        print_r($result);
-    }
-    //save user answers;
-    //sendEmail();
-    return json_encode('correct');
+    return json_encode(1);
 
 }
+if (isset($_POST['exam_status'])) {
+    //send session data in post request
+    $userId = $_POST['user_id'];
+    $testId = $_POST['test_id'];
+
+    $conn = new mysqli("localhost", "root", "123", "multiple-choice-quiz");
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = "SELECT u.id
+            FROM users_answers u 
+             WHERE u.id=? and u.test_id= ? LIMIT 1";
+//    $user = getSingleRecord($sql, 'ii', [$userId, $testId]);
+    $params = [$userId, $testId];
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ii', ...$params);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+    $stmt->close();
+
+    if (!empty($user)) {
+        echo 1;//finished
+    }
+    else
+        echo 0;//
+}
+
+if (isset($_POST['quiz_report_button'])) {
+    $userId = $_POST['user_id'];
+    $testId = $_POST['test_id'];
+//    $conn = new mysqli(SERVER,USER, PASSWORD, DB);
+//    header('location: ' . BASE_URL . 'admin/users/userGrade.php');
+    echo $userId;
+    echo $testId;
+}
+
 function sendEmail()
 {
     $name = isset($_SESSION['user'])?$_SESSION['user']['username']:'';

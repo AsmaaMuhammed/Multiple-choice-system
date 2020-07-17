@@ -72,6 +72,9 @@ Quiz.prototype.render = function(container) {
     // Add listener for the submit answers button
     $('#submit-button').click(function() {
         var test_grade = $('#test_grade').val();
+        var test_id = $('#test_id').val();
+        var user_id = $('#user_id').val();
+
         var ids = [];
         var answers = [];
         var grads = [];
@@ -93,9 +96,24 @@ Quiz.prototype.render = function(container) {
             }
 
 
-            // $('#quiz-retry-button').click(function(reset) {
-            //     quiz.render(quiz_container);
-            // });
+            $('#quiz-report-button').click(function() {
+                var htmlString=$('#base_url').val();
+                window.location.replace(htmlString+'admin/users/userGrade.php?user_answers='+answers);
+                // $.ajax({
+                //     type: "POST",
+                //     url: "userLogic.php",
+                //     dataType  : 'json',
+                //     data: {quiz_report_button: true,test_id:test_id, user_id: user_id},
+                //     success :  function(response)
+                //     {
+                //         if(response ==1) {
+                //
+                //         }
+                //     }
+                //
+                //
+                // });
+            });
             //[ques_id,user_answer,user_grade]
             ids.push(ques_id);
             answers.push(user_answer);
@@ -131,10 +149,13 @@ Quiz.prototype.render = function(container) {
             type: "POST",
             url: "userLogic.php",
             dataType  : 'json',
-            data: {answer_exam: true, ids:JSON.stringify(ids), answers:answers, grads:grads},
+            data: {answer_exam: true, ids:JSON.stringify(ids), answers:answers, grads:grads, test_id:test_id, user_id: user_id},
             success :  function(response)
             {
-
+                if(response ==1) {
+                    $('.exam_status').hide();//.css('display', 'none');
+                    $('#quiz-report-button').sideDown();//.css('display', 'none');
+                }
             }
 
 
@@ -235,25 +256,46 @@ Question.prototype.render = function(container) {
 
 // "Main method" which will create all the objects and render the Quiz.
 $(document).ready(function() {
-    // Create an instance of the Quiz object
-    all_questions = $.parseJSON($('#questions').html());
-    var wrong;
-    var wrongs = [];
-    var quiz = new Quiz('');
-    // Create Question objects from all_questions and add them to the Quiz object
-    for (var i = 0; i < all_questions.length; i++) {
-        // Create a new Question object
-        wrong = all_questions[i].choices.wrong;
-        for (var key in wrong) {
-            wrongs.push(wrong[key]);
+    var test_id = $('#test_id').val();
+    var user_id = $('#user_id').val();
+    $.ajax({
+        type: "POST",
+        url: "userLogic.php",
+        dataType  : 'json',
+        data: {exam_status: true, test_id:test_id, user_id: user_id},
+        success :  function(response)
+        {
+            if(response ==1){
+                $('.exam_status').hide();//.css('display', 'none');
+                alert('You answered the questions before');
+
+            }
+            else
+            {
+                // Create an instance of the Quiz object
+                all_questions = $.parseJSON($('#questions').html());
+                var wrong;
+                var wrongs = [];
+                var quiz = new Quiz('');
+                // Create Question objects from all_questions and add them to the Quiz object
+                for (var i = 0; i < all_questions.length; i++) {
+                    // Create a new Question object
+                    wrong = all_questions[i].choices.wrong;
+                    for (var key in wrong) {
+                        wrongs.push(wrong[key]);
+                    }
+
+                    var question = new Question(all_questions[i].question_string, all_questions[i].choices.correct, wrongs, all_questions[i].question_grade,all_questions[i].id);
+                    // Add the question to the instance of the Quiz object that we created previously
+                    quiz.add_question(question);
+                }
+
+                // Render the quiz
+                var quiz_container = $('#quiz');
+                quiz.render(quiz_container);
+            }
         }
 
-        var question = new Question(all_questions[i].question_string, all_questions[i].choices.correct, wrongs, all_questions[i].question_grade,all_questions[i].id);
-        // Add the question to the instance of the Quiz object that we created previously
-        quiz.add_question(question);
-    }
 
-    // Render the quiz
-    var quiz_container = $('#quiz');
-    quiz.render(quiz_container);
+    });
 });

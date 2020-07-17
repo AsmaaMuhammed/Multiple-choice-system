@@ -80,6 +80,7 @@ function getQuestionsByClassId($classId, $user_id, $test_id){
     }
     return json_encode($result);
 }
+
 function checkIfUserFinishTheTestBefore($user_id, $test_id)
 {
     global $conn;
@@ -89,7 +90,7 @@ function checkIfUserFinishTheTestBefore($user_id, $test_id)
     $user = getSingleRecord($sql, 'ii', [$user_id, $test_id]);
 
     if (!empty($user)) {
-        return 1;
+        return 1;//finished
     }
     return 0;
 }

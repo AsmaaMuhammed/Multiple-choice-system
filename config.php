@@ -1,6 +1,11 @@
 <?php
 	session_start(); // start session
 	// connect to database
+//define ('SERVER', "localhost");
+//define ('USER',  "root");
+//define ('PASSWORD',"123");
+//define ('DB', "multiple-choice-quiz");
+//$conn = new mysqli(SERVER,USER, PASSWORD, DB);
 	$conn = new mysqli("localhost", "root", "123", "multiple-choice-quiz");
 	// Check connection
 	if ($conn->connect_error) {
