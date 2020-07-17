@@ -71,41 +71,74 @@ Quiz.prototype.render = function(container) {
 
     // Add listener for the submit answers button
     $('#submit-button').click(function() {
+        var test_grade = $('#test_grade').val();
+        var ids = [];
+        var answers = [];
+        var grads = [];
+
         // Determine how many questions the user got right
         var score = 0;
         for (var i = 0; i < self.questions.length; i++) {
-            if (self.questions[i].user_choice_index === self.questions[i].correct_choice_index) {
-                score++;
+            var question_grade =0;
+            var ques_id = self.questions[i].id;
+            var correct_choice_index_var = self.questions[i].correct_choice_index;
+            var user_choice_index_var = self.questions[i].user_choice_index;
+            var user_answer = self.questions[i].choices[user_choice_index_var];
+
+            if (user_choice_index_var === correct_choice_index_var) {
+                question_grade = self.questions[i].question_grade;
+                score+=question_grade;
+                // var choicesArr = self.questions[i].choices.split(",");
+
             }
 
-            $('#quiz-retry-button').click(function(reset) {
-                quiz.render(quiz_container);
-            });
+
+            // $('#quiz-retry-button').click(function(reset) {
+            //     quiz.render(quiz_container);
+            // });
+            //[ques_id,user_answer,user_grade]
+            ids.push(ques_id);
+            answers.push(user_answer);
+            grads.push(question_grade);
 
         }
 
 
 
         // Display the score with the appropriate message
-        var percentage = score / self.questions.length;
+        var percentage = score / parseInt(test_grade);// self.questions.length;
         console.log(percentage);
         var message;
         if (percentage === 1) {
-            message = 'Great job!'
+            message = ' Great job!'
         } else if (percentage >= .75) {
-            message = 'You did alright.'
+            message = ' You did alright.'
         } else if (percentage >= .5) {
-            message = 'Better luck next time.'
+            message = ' Better luck next time.'
         } else {
-            message = 'Maybe you should try a little harder.'
+            message = ' Maybe you should try a little harder.'
         }
-        $('#quiz-results-message').text(message);
+        $('#quiz-results-message').text('Test Grade is '+test_grade+' and You got '+score+', '+ message);
         $('#quiz-results-score').html('You got <b>' + score + '/' + self.questions.length + '</b> questions correct.');
         $('#quiz-results').slideDown();
         $('#submit-button').slideUp();
         $('#next-question-button').slideUp();
         $('#prev-question-button').slideUp();
-        $('#quiz-retry-button').sideDown();
+        // $('#quiz-retry-button').sideDown();
+        //save answers in DB
+        // alert(JSON.stringify(ids));
+        $.ajax({
+            type: "POST",
+            url: "userLogic.php",
+            dataType  : 'json',
+            data: {answer_exam: true, ids:JSON.stringify(ids), answers:answers, grads:grads},
+            success :  function(response)
+            {
+
+            }
+
+
+        });
 
     });
 
@@ -120,15 +153,16 @@ Quiz.prototype.render = function(container) {
         }
         $('#submit-button').prop('disabled', !all_questions_answered);
     });
-}
+};
 
 // An object for a Question, which contains the question, the correct choice, and wrong choices. This block is the constructor.
-var Question = function(question_string, correct_choice, wrong_choices) {
+var Question = function(question_string, correct_choice, wrong_choices, ques_grade, id) {
     // Private fields for an instance of a Question object.
     this.question_string = question_string;
     this.choices = [];
     this.user_choice_index = null; // Index of the user's choice selection
-
+    this.question_grade = ques_grade;
+    this.id = id;
     // Random assign the correct choice an index
     this.correct_choice_index = Math.floor(Math.random(0, wrong_choices.length + 1));
 
@@ -146,7 +180,7 @@ var Question = function(question_string, correct_choice, wrong_choices) {
             wrong_choices.splice(wrong_choice_index, 1);
         }
     }
-}
+};
 
 // A function that you can enact on an instance of a question object. This function is called render() and takes in a variable called the container, which is the <div> that I will render the question in. This question will "return" with the score when the question has been answered.
 Question.prototype.render = function(container) {
@@ -197,7 +231,7 @@ Question.prototype.render = function(container) {
         // Trigger a user-select-change
         container.trigger('user-select-change');
     });
-}
+};
 
 // "Main method" which will create all the objects and render the Quiz.
 $(document).ready(function() {
@@ -213,8 +247,8 @@ $(document).ready(function() {
         for (var key in wrong) {
             wrongs.push(wrong[key]);
         }
-        var question = new Question(all_questions[i].question_string, all_questions[i].choices.correct, wrongs);
 
+        var question = new Question(all_questions[i].question_string, all_questions[i].choices.correct, wrongs, all_questions[i].question_grade,all_questions[i].id);
         // Add the question to the instance of the Quiz object that we created previously
         quiz.add_question(question);
     }

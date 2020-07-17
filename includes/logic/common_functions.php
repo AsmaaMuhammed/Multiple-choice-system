@@ -12,11 +12,12 @@
   }
   function loginById($user_id) {
     global $conn;
-    $sql = "SELECT u.id, u.role_id, u.username, r.name as role,c.id as class_id, c.name as class_name
+    $sql = "SELECT u.id, u.role_id, u.username, r.name as role,c.id as class_id, c.name as class_name,t.id as test_id, t.test_grade
             FROM users u 
             LEFT JOIN roles r ON u.role_id=r.id
             LEFT JOIN classes c ON u.class_id=c.id
-             WHERE u.id=? LIMIT 1";
+            LEFT JOIN tests t ON t.class_id=c.id
+             WHERE u.id=? and t.is_active= 1 LIMIT 1";
     $user = getSingleRecord($sql, 'i', [$user_id]);
 
     if (!empty($user)) {
@@ -36,43 +37,61 @@
             $classId = $user['class_id'];
             $adminEmail = getAdminEmail($classId);
             $_SESSION['adminEmail'] = $adminEmail;
-            sendEmail();
-            $questions = getQuestionsByClassId($classId);
+            $questions = getQuestionsByClassId($classId, $user['id'], $user['test_id']);
             $_SESSION['questions'] = $questions;
             $_SESSION['questions_count'] = count($questions);
-            sendEmail();
+            $_SESSION['finished'] = $questions == 1?1:0;
         header('location: ' . BASE_URL . 'admin/users/userExam.php');
       }
       exit(0);
     }
   }
-function getQuestionsByClassId($classId){
+function getQuestionsByClassId($classId, $user_id, $test_id){
     global $conn;
-    $sql = "SELECT t.id,t.test_grade, t.class_id, c.name as class_name,q.id as ques_id, q.name as ques_name, q.choice1, q.choice2, q.choice3, q.choice4, q.correct_answer, q.ques_grade
+    $result = [];
+    $checkIfAnswer = checkIfUserFinishTheTestBefore($user_id, $test_id);
+    if($checkIfAnswer){
+        return 1; //finished
+    }
+    else {
+        $sql = "SELECT t.id,t.test_grade, t.class_id, c.name as class_name,q.id as ques_id, q.name as ques_name, q.choice1, q.choice2, q.choice3, q.choice4, q.correct_answer, q.ques_grade
            FROM tests t 
            LEFT JOIN classes c ON t.class_id=c.id
            LEFT JOIN questions q ON q.test_id = t.id
            WHERE t.is_active =1 and t.class_id = ?";
-    $questions = getMultipleRecords($sql, 'i', [$classId]);
-    $result = [];
-    foreach ($questions as $key => $value)
-    {
-        $choice1 = $value['choice1'];
-        $choice2 = $value['choice2'];
-        $choice3 = $value['choice3'];
-        $choice4 = $value['choice4'];
-        $correct_answer = $value['correct_answer'];
-        $wrong = array_diff([$choice1, $choice2, $choice3, $choice4], [$correct_answer]);
-        $result[] = [
-            'question_string'=>$value['ques_name'],
-            'choices'=>[
-                'correct'=>$value['correct_answer'],
-                'wrong'=>$wrong
-            ]
-        ];
+        $questions = getMultipleRecords($sql, 'i', [$classId]);
+        foreach ($questions as $key => $value) {
+            $choice1 = $value['choice1'];
+            $choice2 = $value['choice2'];
+            $choice3 = $value['choice3'];
+            $choice4 = $value['choice4'];
+            $correct_answer = $value['correct_answer'];
+            $wrong = array_diff([$choice1, $choice2, $choice3, $choice4], [$correct_answer]);
+            $result[] = [
+                'id' => $value['ques_id'],
+                'question_string' => $value['ques_name'],
+                'choices' => [
+                    'correct' => $value['correct_answer'],
+                    'wrong' => $wrong
+                ],
+                'question_grade' => $value['ques_grade']
+            ];
+        }
     }
-//    print_r(json_encode($result));
     return json_encode($result);
+}
+function checkIfUserFinishTheTestBefore($user_id, $test_id)
+{
+    global $conn;
+    $sql = "SELECT u.id
+            FROM users_answers u 
+             WHERE u.id=? and u.test_id= ? LIMIT 1";
+    $user = getSingleRecord($sql, 'ii', [$user_id, $test_id]);
+
+    if (!empty($user)) {
+        return 1;
+    }
+    return 0;
 }
 // Accept a user object, validates user and return an array with the error messages
   function validateUser($user, $ignoreFields) {
@@ -220,15 +239,4 @@ function getAdminEmail($classId)
         }
     }
     return $adminEmail;
-}
-function sendEmail()
-{
-    $name = isset($_SESSION['user'])?$_SESSION['user']['username']:'';
-    $grade = '';
-    $to_email = isset($_SESSION['adminEmail'])?$_SESSION['adminEmail']:'';
-    $subject = 'Answering Quiz';
-    $message = $name.' finished the quiz with Grade '.$grade;
-    $headers = FROM_EMAIL;
-    $res = mail($to_email,$subject,$message,$headers);
-    return $res;
 }

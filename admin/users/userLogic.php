@@ -174,3 +174,49 @@ if (isset($_POST['update_profile'])) {
       updateUser($user_id); // Update logged in user profile
     }
 }
+if (isset($_POST['answer_exam'])) {
+    $questionsIds = json_decode($_POST['ids']);
+    $questionsAnswers = $_POST['answers'];
+    $questionsGrads = $_POST['grads'];
+    //send session data in post request
+    $userId = $_SESSION['user']['id'];
+    $testId = $_SESSION['user']['test_id'];
+    $conn = new mysqli("localhost", "root", "123", "multiple-choice-quiz");
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    foreach ($questionsIds as $i=>$row)
+    {
+        //echo $i;
+        $sql = "INSERT INTO users_answers SET user_id=?, test_id=?, ques_id=?, user_answer=?, user_grade=?";
+
+        $params = [$user_id, $testId, $questionsIds[$i], $questionsAnswers[$i], $questionsGrads[$i]];
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('iiisi', ...$params);
+        $result = $stmt->execute();
+//        $result = modifyRecord($sql, 'iiisi', [$user_id, $testId, $row[0], $row[1], $row[2]]);
+
+    }
+    $stmt->close();
+    if($result){
+        print_r($result);
+    } else {
+        print_r($result);
+    }
+    //save user answers;
+    //sendEmail();
+    return json_encode('correct');
+
+}
+function sendEmail()
+{
+    $name = isset($_SESSION['user'])?$_SESSION['user']['username']:'';
+    $grade = '';
+    $to_email = isset($_SESSION['adminEmail'])?$_SESSION['adminEmail']:'';
+    $subject = 'Answering Quiz';
+    $message = $name.' finished the quiz with Grade '.$grade;
+    $headers = FROM_EMAIL;
+    $res = mail($to_email,$subject,$message,$headers);
+    return $res;
+}

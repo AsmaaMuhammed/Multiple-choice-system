@@ -1,7 +1,7 @@
 <?php
 	session_start(); // start session
 	// connect to database
-	$conn = new mysqli("localhost", "root", "", "multiple-choice-quiz");
+	$conn = new mysqli("localhost", "root", "123", "multiple-choice-quiz");
 	// Check connection
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
@@ -9,8 +9,10 @@
   // define global constants
 	define ('ROOT_PATH', realpath(dirname(__FILE__))); // path to the root folder
 	define ('INCLUDE_PATH', realpath(dirname(__FILE__) . '/includes' )); // Path to includes folder
-	define('BASE_URL', 'http://localhost/multiple-choice-quiz/'); // the home url of the website
-	define('FROM_EMAIL', 'someone@example'); // someone@example.com from email
+	define('BASE_URL', 'http://localhost/Multiple-choice-system/'); // the home url of the website
+	define('FROM_EMAIL', 'asmmohhasanien@gmail.com'); // someone@example.com from email
+
+
 
 	function getMultipleRecords($sql, $types = null, $params = []) {
 		global $conn;
