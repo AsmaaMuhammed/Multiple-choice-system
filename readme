@@ -1,5 +1,5 @@
-1- update connection to your db and FROMEMAIL var in config.php file in the root.
-2- run the script in db.sql
+1- update connection to your db and FROMEMAIL var in config.php file in the root and admin/users/userLogic.php file.
+2- import multiple-choice-quiz.sql in your DB.
 3- there are 2 roles admin and user and I added the permissions for them
 4- each class has 1 active test when add test for class all previous test converted to non active.
 5- each user is joined to 1 class.

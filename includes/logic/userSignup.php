@@ -47,7 +47,8 @@ if (isset($_POST['login_btn'])) {
 		if (!empty($user)) { // if user was found
 			if (password_verify($password, $user['password'])) { // if password matches
 				// log user in
-				loginById($user['id']);
+				echo loginById($user['id']);
+
 			} else { // if password does not match
 				$_SESSION['error_msg'] = "Wrong credentials";
 			}

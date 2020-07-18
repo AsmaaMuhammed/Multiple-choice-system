@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="43ecfd95-9061-492b-ba96-94f3780b14f7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/users/userLogic.php" afterPath="$PROJECT_DIR$/admin/users/userLogic.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/logic/common_functions.php" afterPath="$PROJECT_DIR$/includes/logic/common_functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/logic/userSignup.php" afterPath="$PROJECT_DIR$/includes/logic/userSignup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme" afterPath="$PROJECT_DIR$/readme" />
     </list>
     <ignored path="multiple-choice-quiz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,69 +58,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="common_functions.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="readme" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readme">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common_functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/logic/common_functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="76" column="31" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="31" />
+            <state relative-caret-position="74">
+              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
               <folding>
                 <element signature="e#291#369#0#PHP" expanded="false" />
                 <element signature="e#337#369#0#PHP" expanded="false" />
                 <element signature="n#validateUser#0;n#!!top" expanded="false" />
-                <element signature="e#4058#4218#0#PHP" expanded="false" />
-                <element signature="e#4284#4680#0#PHP" expanded="false" />
-                <element signature="e#4528#4672#0#PHP" expanded="false" />
-                <element signature="e#4801#5391#0#PHP" expanded="false" />
-                <element signature="e#5053#5206#0#PHP" expanded="false" />
-                <element signature="e#5215#5383#0#PHP" expanded="false" />
-                <element signature="e#5427#5630#0#PHP" expanded="false" />
-                <element signature="e#5471#5537#0#PHP" expanded="false" />
-                <element signature="e#5543#5623#0#PHP" expanded="false" />
+                <element signature="e#4300#4460#0#PHP" expanded="false" />
+                <element signature="e#4526#4922#0#PHP" expanded="false" />
+                <element signature="e#4770#4914#0#PHP" expanded="false" />
+                <element signature="e#5043#5633#0#PHP" expanded="false" />
+                <element signature="e#5295#5448#0#PHP" expanded="false" />
+                <element signature="e#5457#5625#0#PHP" expanded="false" />
+                <element signature="e#5669#5872#0#PHP" expanded="false" />
+                <element signature="e#5713#5779#0#PHP" expanded="false" />
+                <element signature="e#5785#5865#0#PHP" expanded="false" />
                 <element signature="n#uploadProfilePicture#0;n#!!top" expanded="false" />
-                <element signature="e#5818#6346#0#PHP" expanded="false" />
-                <element signature="e#6147#6340#0#PHP" expanded="false" />
-                <element signature="e#6284#6340#0#PHP" expanded="false" />
+                <element signature="e#6060#6588#0#PHP" expanded="false" />
+                <element signature="e#6389#6582#0#PHP" expanded="false" />
+                <element signature="e#6526#6582#0#PHP" expanded="false" />
                 <element signature="n#validateRole#0;n#!!top" expanded="false" />
-                <element signature="e#6517#6705#0#PHP" expanded="false" />
-                <element signature="e#6557#6617#0#PHP" expanded="false" />
-                <element signature="e#6622#6701#0#PHP" expanded="false" />
+                <element signature="e#6759#6947#0#PHP" expanded="false" />
+                <element signature="e#6799#6859#0#PHP" expanded="false" />
+                <element signature="e#6864#6943#0#PHP" expanded="false" />
                 <element signature="n#validateTest#0;n#!!top" expanded="false" />
-                <element signature="e#6897#7113#0#PHP" expanded="false" />
-                <element signature="e#6941#7009#0#PHP" expanded="false" />
-                <element signature="e#7018#7107#0#PHP" expanded="false" />
+                <element signature="e#7139#7355#0#PHP" expanded="false" />
+                <element signature="e#7183#7251#0#PHP" expanded="false" />
+                <element signature="e#7260#7349#0#PHP" expanded="false" />
                 <element signature="n#validateQuestion#0;n#!!top" expanded="false" />
-                <element signature="e#7314#7538#0#PHP" expanded="false" />
-                <element signature="e#7362#7430#0#PHP" expanded="false" />
-                <element signature="e#7439#7532#0#PHP" expanded="false" />
+                <element signature="e#7556#7780#0#PHP" expanded="false" />
+                <element signature="e#7604#7672#0#PHP" expanded="false" />
+                <element signature="e#7681#7774#0#PHP" expanded="false" />
                 <element signature="n#getAllClasses#0;n#!!top" expanded="false" />
                 <element signature="n#getAllTests#0;n#!!top" expanded="false" />
-                <marker date="1595001928730" expanded="false" signature="146:199" ph="SELECT * FRO... users" />
-                <marker date="1595001928730" expanded="true" signature="437:783" ph="SELECT u.id,... users" />
-                <marker date="1595001928730" expanded="true" signature="1030:1242" ph="SELECT p.nam... permissions" />
-                <marker date="1595001928730" expanded="true" signature="2339:2689" ph="SELECT t.id,... tests" />
-                <marker date="1595001928730" expanded="true" signature="3613:3709" ph="SELECT u.id users_answers" />
-                <marker date="1595001928730" expanded="false" signature="4362:4400" ph="SELECT * FRO... users" />
-                <marker date="1595001928730" expanded="false" signature="4902:4957" ph="SELECT * FRO... users" />
-                <marker date="1595001928730" expanded="false" signature="7618:7646" ph="SELECT id, n... classes" />
-                <marker date="1595001928730" expanded="false" signature="7863:8086" ph="SELECT t.id,... tests" />
-                <marker date="1595001928730" expanded="true" signature="8220:8322" ph="SELECT u.id,... users" />
-                <marker date="1595001928730" expanded="true" signature="8482:8567" ph="SELECT u.id,... users" />
+                <marker date="1595030328355" expanded="false" signature="146:199" ph="SELECT * FRO... users" />
+                <marker date="1595030328355" expanded="true" signature="438:596" ph="SELECT u.id,... users" />
+                <marker date="1595030328355" expanded="true" signature="842:1054" ph="SELECT p.nam... permissions" />
+                <marker date="1595030328355" expanded="true" signature="1410:1756" ph="SELECT u.id,... users" />
+                <marker date="1595030328355" expanded="true" signature="2581:2931" ph="SELECT t.id,... tests" />
+                <marker date="1595030328355" expanded="true" signature="3855:3951" ph="SELECT u.id users_answers" />
+                <marker date="1595030328355" expanded="false" signature="4604:4642" ph="SELECT * FRO... users" />
+                <marker date="1595030328355" expanded="false" signature="5144:5199" ph="SELECT * FRO... users" />
+                <marker date="1595030328355" expanded="false" signature="7860:7888" ph="SELECT id, n... classes" />
+                <marker date="1595030328355" expanded="false" signature="8105:8328" ph="SELECT t.id,... tests" />
+                <marker date="1595030328355" expanded="true" signature="8462:8564" ph="SELECT u.id,... users" />
+                <marker date="1595030328355" expanded="true" signature="8724:8809" ph="SELECT u.id,... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multiple-choice-quiz.users_answers" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/a30f97f3/9ead6432-f3f6-4b91-8bfa-1e2e20598c11/multiple-choice-quiz.users_answers">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file leaf-file-name="userSignup.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/logic/userSignup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <marker date="1595029954000" expanded="true" signature="734:820" ph="INSERT INTO users... " />
+                <marker date="1595029954000" expanded="true" signature="1429:1484" ph="SELECT * FRO... users" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,8 +137,8 @@
       <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="48" />
+            <state relative-caret-position="120">
+              <caret line="8" column="72" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -159,8 +170,8 @@
       <file leaf-file-name="userLogic.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/users/userLogic.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
               <folding>
                 <marker date="1595026653317" expanded="true" signature="476:502" ph="SELECT id, n... roles" />
                 <marker date="1595026653317" expanded="true" signature="1893:1994" ph="UPDATE users... " />
@@ -177,11 +188,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userGrade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userGrade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/users/userGrade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+            <state relative-caret-position="259">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -213,17 +224,18 @@
         <option value="$PROJECT_DIR$/admin/user_dashboard.php" />
         <option value="$PROJECT_DIR$/includes/layouts/navbar.php" />
         <option value="$PROJECT_DIR$/admin/questions/questionLogic.php" />
-        <option value="$PROJECT_DIR$/readme" />
         <option value="dbtable:/a30f97f3/9ead6432-f3f6-4b91-8bfa-1e2e20598c11/multiple-choice-quiz.users_answers" />
         <option value="$PROJECT_DIR$/db.sql" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/admin/users/userAnswers.php" />
-        <option value="$PROJECT_DIR$/includes/logic/common_functions.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/admin/users/userExam.php" />
         <option value="$PROJECT_DIR$/assets/js/quiz.js" />
         <option value="$PROJECT_DIR$/admin/users/userLogic.php" />
         <option value="$PROJECT_DIR$/admin/users/userGrade.php" />
+        <option value="$PROJECT_DIR$/readme" />
+        <option value="$PROJECT_DIR$/includes/logic/userSignup.php" />
+        <option value="$PROJECT_DIR$/includes/logic/common_functions.php" />
       </list>
     </option>
   </component>
@@ -427,12 +439,12 @@
       <updated>1594745066980</updated>
       <workItem from="1594745068365" duration="36921000" />
       <workItem from="1594855688285" duration="24319000" />
-      <workItem from="1594999721884" duration="17466000" />
+      <workItem from="1594999721884" duration="19883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78706000" />
+    <option name="totallyTimeSpent" value="81123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -508,44 +520,45 @@
             <element signature="e#291#369#0#PHP" expanded="false" />
             <element signature="e#337#369#0#PHP" expanded="false" />
             <element signature="n#validateUser#0;n#!!top" expanded="false" />
-            <element signature="e#4058#4218#0#PHP" expanded="false" />
-            <element signature="e#4284#4680#0#PHP" expanded="false" />
-            <element signature="e#4528#4672#0#PHP" expanded="false" />
-            <element signature="e#4801#5391#0#PHP" expanded="false" />
-            <element signature="e#5053#5206#0#PHP" expanded="false" />
-            <element signature="e#5215#5383#0#PHP" expanded="false" />
-            <element signature="e#5427#5630#0#PHP" expanded="false" />
-            <element signature="e#5471#5537#0#PHP" expanded="false" />
-            <element signature="e#5543#5623#0#PHP" expanded="false" />
+            <element signature="e#4300#4460#0#PHP" expanded="false" />
+            <element signature="e#4526#4922#0#PHP" expanded="false" />
+            <element signature="e#4770#4914#0#PHP" expanded="false" />
+            <element signature="e#5043#5633#0#PHP" expanded="false" />
+            <element signature="e#5295#5448#0#PHP" expanded="false" />
+            <element signature="e#5457#5625#0#PHP" expanded="false" />
+            <element signature="e#5669#5872#0#PHP" expanded="false" />
+            <element signature="e#5713#5779#0#PHP" expanded="false" />
+            <element signature="e#5785#5865#0#PHP" expanded="false" />
             <element signature="n#uploadProfilePicture#0;n#!!top" expanded="false" />
-            <element signature="e#5818#6346#0#PHP" expanded="false" />
-            <element signature="e#6147#6340#0#PHP" expanded="false" />
-            <element signature="e#6284#6340#0#PHP" expanded="false" />
+            <element signature="e#6060#6588#0#PHP" expanded="false" />
+            <element signature="e#6389#6582#0#PHP" expanded="false" />
+            <element signature="e#6526#6582#0#PHP" expanded="false" />
             <element signature="n#validateRole#0;n#!!top" expanded="false" />
-            <element signature="e#6517#6705#0#PHP" expanded="false" />
-            <element signature="e#6557#6617#0#PHP" expanded="false" />
-            <element signature="e#6622#6701#0#PHP" expanded="false" />
+            <element signature="e#6759#6947#0#PHP" expanded="false" />
+            <element signature="e#6799#6859#0#PHP" expanded="false" />
+            <element signature="e#6864#6943#0#PHP" expanded="false" />
             <element signature="n#validateTest#0;n#!!top" expanded="false" />
-            <element signature="e#6897#7113#0#PHP" expanded="false" />
-            <element signature="e#6941#7009#0#PHP" expanded="false" />
-            <element signature="e#7018#7107#0#PHP" expanded="false" />
+            <element signature="e#7139#7355#0#PHP" expanded="false" />
+            <element signature="e#7183#7251#0#PHP" expanded="false" />
+            <element signature="e#7260#7349#0#PHP" expanded="false" />
             <element signature="n#validateQuestion#0;n#!!top" expanded="false" />
-            <element signature="e#7314#7538#0#PHP" expanded="false" />
-            <element signature="e#7362#7430#0#PHP" expanded="false" />
-            <element signature="e#7439#7532#0#PHP" expanded="false" />
+            <element signature="e#7556#7780#0#PHP" expanded="false" />
+            <element signature="e#7604#7672#0#PHP" expanded="false" />
+            <element signature="e#7681#7774#0#PHP" expanded="false" />
             <element signature="n#getAllClasses#0;n#!!top" expanded="false" />
             <element signature="n#getAllTests#0;n#!!top" expanded="false" />
-            <marker date="1595001928730" expanded="false" signature="146:199" ph="SELECT * FRO... users" />
-            <marker date="1595001928730" expanded="true" signature="437:783" ph="SELECT u.id,... users" />
-            <marker date="1595001928730" expanded="true" signature="1030:1242" ph="SELECT p.nam... permissions" />
-            <marker date="1595001928730" expanded="true" signature="2339:2689" ph="SELECT t.id,... tests" />
-            <marker date="1595001928730" expanded="true" signature="3613:3709" ph="SELECT u.id users_answers" />
-            <marker date="1595001928730" expanded="false" signature="4362:4400" ph="SELECT * FRO... users" />
-            <marker date="1595001928730" expanded="false" signature="4902:4957" ph="SELECT * FRO... users" />
-            <marker date="1595001928730" expanded="false" signature="7618:7646" ph="SELECT id, n... classes" />
-            <marker date="1595001928730" expanded="false" signature="7863:8086" ph="SELECT t.id,... tests" />
-            <marker date="1595001928730" expanded="true" signature="8220:8322" ph="SELECT u.id,... users" />
-            <marker date="1595001928730" expanded="true" signature="8482:8567" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="false" signature="146:199" ph="SELECT * FRO... users" />
+            <marker date="1595030328355" expanded="true" signature="438:596" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="true" signature="842:1054" ph="SELECT p.nam... permissions" />
+            <marker date="1595030328355" expanded="true" signature="1410:1756" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="true" signature="2581:2931" ph="SELECT t.id,... tests" />
+            <marker date="1595030328355" expanded="true" signature="3855:3951" ph="SELECT u.id users_answers" />
+            <marker date="1595030328355" expanded="false" signature="4604:4642" ph="SELECT * FRO... users" />
+            <marker date="1595030328355" expanded="false" signature="5144:5199" ph="SELECT * FRO... users" />
+            <marker date="1595030328355" expanded="false" signature="7860:7888" ph="SELECT id, n... classes" />
+            <marker date="1595030328355" expanded="false" signature="8105:8328" ph="SELECT t.id,... tests" />
+            <marker date="1595030328355" expanded="true" signature="8462:8564" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="true" signature="8724:8809" ph="SELECT u.id,... users" />
           </folding>
         </state>
       </provider>
@@ -612,44 +625,45 @@
             <element signature="e#291#369#0#PHP" expanded="false" />
             <element signature="e#337#369#0#PHP" expanded="false" />
             <element signature="n#validateUser#0;n#!!top" expanded="false" />
-            <element signature="e#4058#4218#0#PHP" expanded="false" />
-            <element signature="e#4284#4680#0#PHP" expanded="false" />
-            <element signature="e#4528#4672#0#PHP" expanded="false" />
-            <element signature="e#4801#5391#0#PHP" expanded="false" />
-            <element signature="e#5053#5206#0#PHP" expanded="false" />
-            <element signature="e#5215#5383#0#PHP" expanded="false" />
-            <element signature="e#5427#5630#0#PHP" expanded="false" />
-            <element signature="e#5471#5537#0#PHP" expanded="false" />
-            <element signature="e#5543#5623#0#PHP" expanded="false" />
+            <element signature="e#4300#4460#0#PHP" expanded="false" />
+            <element signature="e#4526#4922#0#PHP" expanded="false" />
+            <element signature="e#4770#4914#0#PHP" expanded="false" />
+            <element signature="e#5043#5633#0#PHP" expanded="false" />
+            <element signature="e#5295#5448#0#PHP" expanded="false" />
+            <element signature="e#5457#5625#0#PHP" expanded="false" />
+            <element signature="e#5669#5872#0#PHP" expanded="false" />
+            <element signature="e#5713#5779#0#PHP" expanded="false" />
+            <element signature="e#5785#5865#0#PHP" expanded="false" />
             <element signature="n#uploadProfilePicture#0;n#!!top" expanded="false" />
-            <element signature="e#5818#6346#0#PHP" expanded="false" />
-            <element signature="e#6147#6340#0#PHP" expanded="false" />
-            <element signature="e#6284#6340#0#PHP" expanded="false" />
+            <element signature="e#6060#6588#0#PHP" expanded="false" />
+            <element signature="e#6389#6582#0#PHP" expanded="false" />
+            <element signature="e#6526#6582#0#PHP" expanded="false" />
             <element signature="n#validateRole#0;n#!!top" expanded="false" />
-            <element signature="e#6517#6705#0#PHP" expanded="false" />
-            <element signature="e#6557#6617#0#PHP" expanded="false" />
-            <element signature="e#6622#6701#0#PHP" expanded="false" />
+            <element signature="e#6759#6947#0#PHP" expanded="false" />
+            <element signature="e#6799#6859#0#PHP" expanded="false" />
+            <element signature="e#6864#6943#0#PHP" expanded="false" />
             <element signature="n#validateTest#0;n#!!top" expanded="false" />
-            <element signature="e#6897#7113#0#PHP" expanded="false" />
-            <element signature="e#6941#7009#0#PHP" expanded="false" />
-            <element signature="e#7018#7107#0#PHP" expanded="false" />
+            <element signature="e#7139#7355#0#PHP" expanded="false" />
+            <element signature="e#7183#7251#0#PHP" expanded="false" />
+            <element signature="e#7260#7349#0#PHP" expanded="false" />
             <element signature="n#validateQuestion#0;n#!!top" expanded="false" />
-            <element signature="e#7314#7538#0#PHP" expanded="false" />
-            <element signature="e#7362#7430#0#PHP" expanded="false" />
-            <element signature="e#7439#7532#0#PHP" expanded="false" />
+            <element signature="e#7556#7780#0#PHP" expanded="false" />
+            <element signature="e#7604#7672#0#PHP" expanded="false" />
+            <element signature="e#7681#7774#0#PHP" expanded="false" />
             <element signature="n#getAllClasses#0;n#!!top" expanded="false" />
             <element signature="n#getAllTests#0;n#!!top" expanded="false" />
-            <marker date="1595001928730" expanded="false" signature="146:199" ph="SELECT * FRO... users" />
-            <marker date="1595001928730" expanded="true" signature="437:783" ph="SELECT u.id,... users" />
-            <marker date="1595001928730" expanded="true" signature="1030:1242" ph="SELECT p.nam... permissions" />
-            <marker date="1595001928730" expanded="true" signature="2339:2689" ph="SELECT t.id,... tests" />
-            <marker date="1595001928730" expanded="true" signature="3613:3709" ph="SELECT u.id users_answers" />
-            <marker date="1595001928730" expanded="false" signature="4362:4400" ph="SELECT * FRO... users" />
-            <marker date="1595001928730" expanded="false" signature="4902:4957" ph="SELECT * FRO... users" />
-            <marker date="1595001928730" expanded="false" signature="7618:7646" ph="SELECT id, n... classes" />
-            <marker date="1595001928730" expanded="false" signature="7863:8086" ph="SELECT t.id,... tests" />
-            <marker date="1595001928730" expanded="true" signature="8220:8322" ph="SELECT u.id,... users" />
-            <marker date="1595001928730" expanded="true" signature="8482:8567" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="false" signature="146:199" ph="SELECT * FRO... users" />
+            <marker date="1595030328355" expanded="true" signature="438:596" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="true" signature="842:1054" ph="SELECT p.nam... permissions" />
+            <marker date="1595030328355" expanded="true" signature="1410:1756" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="true" signature="2581:2931" ph="SELECT t.id,... tests" />
+            <marker date="1595030328355" expanded="true" signature="3855:3951" ph="SELECT u.id users_answers" />
+            <marker date="1595030328355" expanded="false" signature="4604:4642" ph="SELECT * FRO... users" />
+            <marker date="1595030328355" expanded="false" signature="5144:5199" ph="SELECT * FRO... users" />
+            <marker date="1595030328355" expanded="false" signature="7860:7888" ph="SELECT id, n... classes" />
+            <marker date="1595030328355" expanded="false" signature="8105:8328" ph="SELECT t.id,... tests" />
+            <marker date="1595030328355" expanded="true" signature="8462:8564" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="true" signature="8724:8809" ph="SELECT u.id,... users" />
           </folding>
         </state>
       </provider>
@@ -669,25 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3225">
           <caret line="215" column="110" selection-start-line="215" selection-start-column="110" selection-end-line="215" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/logic/userSignup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1594652946307" expanded="true" signature="734:820" ph="INSERT INTO users... " />
-            <marker date="1594652946307" expanded="true" signature="1429:1484" ph="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -904,19 +899,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/users/userAnswers.php" />
-    <entry file="dbDummy://dbtable:/a30f97f3/9ead6432-f3f6-4b91-8bfa-1e2e20598c11/multiple-choice-quiz.users_answers">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/users/userFunctionsAjax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -933,14 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="36" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/users/userExam.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -948,56 +922,6 @@
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1595011019810" expanded="false" signature="2017:2036" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/logic/common_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="76" column="31" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="31" />
-          <folding>
-            <element signature="e#291#369#0#PHP" expanded="false" />
-            <element signature="e#337#369#0#PHP" expanded="false" />
-            <element signature="n#validateUser#0;n#!!top" expanded="false" />
-            <element signature="e#4058#4218#0#PHP" expanded="false" />
-            <element signature="e#4284#4680#0#PHP" expanded="false" />
-            <element signature="e#4528#4672#0#PHP" expanded="false" />
-            <element signature="e#4801#5391#0#PHP" expanded="false" />
-            <element signature="e#5053#5206#0#PHP" expanded="false" />
-            <element signature="e#5215#5383#0#PHP" expanded="false" />
-            <element signature="e#5427#5630#0#PHP" expanded="false" />
-            <element signature="e#5471#5537#0#PHP" expanded="false" />
-            <element signature="e#5543#5623#0#PHP" expanded="false" />
-            <element signature="n#uploadProfilePicture#0;n#!!top" expanded="false" />
-            <element signature="e#5818#6346#0#PHP" expanded="false" />
-            <element signature="e#6147#6340#0#PHP" expanded="false" />
-            <element signature="e#6284#6340#0#PHP" expanded="false" />
-            <element signature="n#validateRole#0;n#!!top" expanded="false" />
-            <element signature="e#6517#6705#0#PHP" expanded="false" />
-            <element signature="e#6557#6617#0#PHP" expanded="false" />
-            <element signature="e#6622#6701#0#PHP" expanded="false" />
-            <element signature="n#validateTest#0;n#!!top" expanded="false" />
-            <element signature="e#6897#7113#0#PHP" expanded="false" />
-            <element signature="e#6941#7009#0#PHP" expanded="false" />
-            <element signature="e#7018#7107#0#PHP" expanded="false" />
-            <element signature="n#validateQuestion#0;n#!!top" expanded="false" />
-            <element signature="e#7314#7538#0#PHP" expanded="false" />
-            <element signature="e#7362#7430#0#PHP" expanded="false" />
-            <element signature="e#7439#7532#0#PHP" expanded="false" />
-            <element signature="n#getAllClasses#0;n#!!top" expanded="false" />
-            <element signature="n#getAllTests#0;n#!!top" expanded="false" />
-            <marker date="1595001928730" expanded="false" signature="146:199" ph="SELECT * FRO... users" />
-            <marker date="1595001928730" expanded="true" signature="437:783" ph="SELECT u.id,... users" />
-            <marker date="1595001928730" expanded="true" signature="1030:1242" ph="SELECT p.nam... permissions" />
-            <marker date="1595001928730" expanded="true" signature="2339:2689" ph="SELECT t.id,... tests" />
-            <marker date="1595001928730" expanded="true" signature="3613:3709" ph="SELECT u.id users_answers" />
-            <marker date="1595001928730" expanded="false" signature="4362:4400" ph="SELECT * FRO... users" />
-            <marker date="1595001928730" expanded="false" signature="4902:4957" ph="SELECT * FRO... users" />
-            <marker date="1595001928730" expanded="false" signature="7618:7646" ph="SELECT id, n... classes" />
-            <marker date="1595001928730" expanded="false" signature="7863:8086" ph="SELECT t.id,... tests" />
-            <marker date="1595001928730" expanded="true" signature="8220:8322" ph="SELECT u.id,... users" />
-            <marker date="1595001928730" expanded="true" signature="8482:8567" ph="SELECT u.id,... users" />
           </folding>
         </state>
       </provider>
@@ -1010,18 +934,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
+    <entry file="file://$PROJECT_DIR$/admin/users/userGrade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="259">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/users/userLogic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
             <marker date="1595026653317" expanded="true" signature="476:502" ph="SELECT id, n... roles" />
             <marker date="1595026653317" expanded="true" signature="1893:1994" ph="UPDATE users... " />
@@ -1037,14 +965,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/users/userGrade.php">
+    <entry file="dbDummy://dbtable:/a30f97f3/9ead6432-f3f6-4b91-8bfa-1e2e20598c11/multiple-choice-quiz.users_answers">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+        <state relative-caret-position="120">
+          <caret line="8" column="72" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="40" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/logic/userSignup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1595029954000" expanded="true" signature="734:820" ph="INSERT INTO users... " />
+            <marker date="1595029954000" expanded="true" signature="1429:1484" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/logic/common_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+          <folding>
+            <element signature="e#291#369#0#PHP" expanded="false" />
+            <element signature="e#337#369#0#PHP" expanded="false" />
+            <element signature="n#validateUser#0;n#!!top" expanded="false" />
+            <element signature="e#4300#4460#0#PHP" expanded="false" />
+            <element signature="e#4526#4922#0#PHP" expanded="false" />
+            <element signature="e#4770#4914#0#PHP" expanded="false" />
+            <element signature="e#5043#5633#0#PHP" expanded="false" />
+            <element signature="e#5295#5448#0#PHP" expanded="false" />
+            <element signature="e#5457#5625#0#PHP" expanded="false" />
+            <element signature="e#5669#5872#0#PHP" expanded="false" />
+            <element signature="e#5713#5779#0#PHP" expanded="false" />
+            <element signature="e#5785#5865#0#PHP" expanded="false" />
+            <element signature="n#uploadProfilePicture#0;n#!!top" expanded="false" />
+            <element signature="e#6060#6588#0#PHP" expanded="false" />
+            <element signature="e#6389#6582#0#PHP" expanded="false" />
+            <element signature="e#6526#6582#0#PHP" expanded="false" />
+            <element signature="n#validateRole#0;n#!!top" expanded="false" />
+            <element signature="e#6759#6947#0#PHP" expanded="false" />
+            <element signature="e#6799#6859#0#PHP" expanded="false" />
+            <element signature="e#6864#6943#0#PHP" expanded="false" />
+            <element signature="n#validateTest#0;n#!!top" expanded="false" />
+            <element signature="e#7139#7355#0#PHP" expanded="false" />
+            <element signature="e#7183#7251#0#PHP" expanded="false" />
+            <element signature="e#7260#7349#0#PHP" expanded="false" />
+            <element signature="n#validateQuestion#0;n#!!top" expanded="false" />
+            <element signature="e#7556#7780#0#PHP" expanded="false" />
+            <element signature="e#7604#7672#0#PHP" expanded="false" />
+            <element signature="e#7681#7774#0#PHP" expanded="false" />
+            <element signature="n#getAllClasses#0;n#!!top" expanded="false" />
+            <element signature="n#getAllTests#0;n#!!top" expanded="false" />
+            <marker date="1595030328355" expanded="false" signature="146:199" ph="SELECT * FRO... users" />
+            <marker date="1595030328355" expanded="true" signature="438:596" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="true" signature="842:1054" ph="SELECT p.nam... permissions" />
+            <marker date="1595030328355" expanded="true" signature="1410:1756" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="true" signature="2581:2931" ph="SELECT t.id,... tests" />
+            <marker date="1595030328355" expanded="true" signature="3855:3951" ph="SELECT u.id users_answers" />
+            <marker date="1595030328355" expanded="false" signature="4604:4642" ph="SELECT * FRO... users" />
+            <marker date="1595030328355" expanded="false" signature="5144:5199" ph="SELECT * FRO... users" />
+            <marker date="1595030328355" expanded="false" signature="7860:7888" ph="SELECT id, n... classes" />
+            <marker date="1595030328355" expanded="false" signature="8105:8328" ph="SELECT t.id,... tests" />
+            <marker date="1595030328355" expanded="true" signature="8462:8564" ph="SELECT u.id,... users" />
+            <marker date="1595030328355" expanded="true" signature="8724:8809" ph="SELECT u.id,... users" />
           </folding>
         </state>
       </provider>

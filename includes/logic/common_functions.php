@@ -12,14 +12,12 @@
   }
   function loginById($user_id) {
     global $conn;
-    $sql = "SELECT u.id, u.role_id, u.username, r.name as role,c.id as class_id, c.name as class_name,t.id as test_id, t.test_grade
+
+    $sql = "SELECT u.id, u.role_id, u.username, r.name as role
             FROM users u 
             LEFT JOIN roles r ON u.role_id=r.id
-            LEFT JOIN classes c ON u.class_id=c.id
-            LEFT JOIN tests t ON t.class_id=c.id
-             WHERE u.id=? and t.is_active= 1 LIMIT 1";
+             WHERE u.id=? LIMIT 1";
     $user = getSingleRecord($sql, 'i', [$user_id]);
-
     if (!empty($user)) {
       // put logged in user into session array
       $_SESSION['user'] = $user;
@@ -34,6 +32,14 @@
         if (isAdmin($user_id)) {
         header('location: ' . BASE_URL . 'admin/dashboard.php');
       } else {
+            $sql = "SELECT u.id, u.role_id, u.username, r.name as role,c.id as class_id, c.name as class_name,t.id as test_id, t.test_grade
+            FROM users u 
+            LEFT JOIN roles r ON u.role_id=r.id
+            LEFT JOIN classes c ON u.class_id=c.id
+            LEFT JOIN tests t ON t.class_id=c.id
+             WHERE u.id=? and t.is_active= 1 LIMIT 1";
+            $user = getSingleRecord($sql, 'i', [$user_id]);
+
             $classId = $user['class_id'];
             $adminEmail = getAdminEmail($classId);
             $_SESSION['adminEmail'] = $adminEmail;
