@@ -38,6 +38,10 @@
        $description = $_POST['description'];
        $class_id = $_POST['class_id'];
        $test_grade = $_POST['test_grade'];
+
+        $sql2 = "UPDATE tests SET is_active=0 where class_id =?";
+        $result2 = modifyMultipleRecord($sql2, 'i', [$class_id]);
+
        $sql = "INSERT INTO tests SET name=?, description=?, class_id=?, test_grade=?";
        $result = modifyRecord($sql, 'ssii', [$name, $description,$class_id,$test_grade]);
 
@@ -63,7 +67,7 @@
       $result = modifyRecord($sql, 'ssiii', [$name, $description,$class_id,$test_grade,$test_id]);
 
       $sql2 = "UPDATE tests SET is_active=0 WHERE id !=? and class_id =?";
-      $result2 = modifyMultipleRecord($sql, 'ii', [$test_id,$class_id]);
+      $result2 = modifyMultipleRecord($sql2, 'ii', [$test_id,$class_id]);
 
       if ($result) {
         $_SESSION['success_msg'] = "test successfully updated";

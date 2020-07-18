@@ -81,6 +81,7 @@ Quiz.prototype.render = function(container) {
 
         // Determine how many questions the user got right
         var score = 0;
+        var score1 = 0;
         for (var i = 0; i < self.questions.length; i++) {
             var question_grade =0;
             var ques_id = self.questions[i].id;
@@ -91,6 +92,7 @@ Quiz.prototype.render = function(container) {
             if (user_choice_index_var === correct_choice_index_var) {
                 question_grade = self.questions[i].question_grade;
                 score+=question_grade;
+                score1++;
                 // var choicesArr = self.questions[i].choices.split(",");
 
             }
@@ -137,7 +139,7 @@ Quiz.prototype.render = function(container) {
             message = ' Maybe you should try a little harder.'
         }
         $('#quiz-results-message').text('Test Grade is '+test_grade+' and You got '+score+', '+ message);
-        $('#quiz-results-score').html('You got <b>' + score + '/' + self.questions.length + '</b> questions correct.');
+        $('#quiz-results-score').html('You got <b>' + score1 + '/' + self.questions.length + '</b> questions correct.');
         $('#quiz-results').slideDown();
         $('#submit-button').slideUp();
         $('#next-question-button').slideUp();
@@ -258,6 +260,7 @@ Question.prototype.render = function(container) {
 $(document).ready(function() {
     var test_id = $('#test_id').val();
     var user_id = $('#user_id').val();
+
     $.ajax({
         type: "POST",
         url: "userLogic.php",

@@ -4,10 +4,10 @@
 <?php include(ROOT_PATH . '/admin/users/userLogic.php'); ?>
 
 <?php
-      $class_id = isset($_SESSION['user'])? $_SESSION['user']['class_id']: 0;
+      $class_id = isset($_SESSION['user']['class_id'])? $_SESSION['user']['class_id']: 0;
       $user_id = isset($_SESSION['user'])? $_SESSION['user']['id']: 0;
-      $test_id = isset($_SESSION['user'])? $_SESSION['user']['test_id']: 0;
-      $test_grade = isset($_SESSION['user'])? $_SESSION['user']['test_grade']: 0;
+      $test_id = isset($_SESSION['user']['test_id'])? $_SESSION['user']['test_id']: 0;
+      $test_grade = isset($_SESSION['user']['test_grade'])? $_SESSION['user']['test_grade']: 0;
       $questions_count = isset($_SESSION['questions_count'])? $_SESSION['questions_count']: 0;
       $questions = isset($_SESSION['questions'])? $_SESSION['questions']: [];
       $finished = isset($_SESSION['finished'])? $_SESSION['finished']: 0;
@@ -47,7 +47,7 @@
     <div class="row">
         <div class="exam_status">
             <?php if ($finished == 0): ?>
-                <?php if ($questions_count >0): ?>
+                <?php if (count(json_decode($questions)) >0): ?>
                     <div id="quiz">
                         <h1 id="quiz-name"></h1>
                         <button type="submit" name="answer_exam" id="submit-button">Submit Answers</button>

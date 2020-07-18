@@ -39,7 +39,8 @@
             LEFT JOIN tests t ON t.class_id=c.id
              WHERE u.id=? and t.is_active= 1 LIMIT 1";
             $user = getSingleRecord($sql, 'i', [$user_id]);
-
+            $_SESSION['user'] = $user;
+            $_SESSION['success_msg'] = "You are now logged in";
             $classId = $user['class_id'];
             $adminEmail = getAdminEmail($classId);
             $_SESSION['adminEmail'] = $adminEmail;
@@ -67,21 +68,23 @@ function getQuestionsByClassId($classId, $user_id, $test_id){
            WHERE t.is_active =1 and t.class_id = ?";
         $questions = getMultipleRecords($sql, 'i', [$classId]);
         foreach ($questions as $key => $value) {
-            $choice1 = $value['choice1'];
-            $choice2 = $value['choice2'];
-            $choice3 = $value['choice3'];
-            $choice4 = $value['choice4'];
-            $correct_answer = $value['correct_answer'];
-            $wrong = array_diff([$choice1, $choice2, $choice3, $choice4], [$correct_answer]);
-            $result[] = [
-                'id' => $value['ques_id'],
-                'question_string' => $value['ques_name'],
-                'choices' => [
-                    'correct' => $value['correct_answer'],
-                    'wrong' => $wrong
-                ],
-                'question_grade' => $value['ques_grade']
-            ];
+            if($value['choice1'] != null) {
+                $choice1 = $value['choice1'];
+                $choice2 = $value['choice2'];
+                $choice3 = $value['choice3'];
+                $choice4 = $value['choice4'];
+                $correct_answer = $value['correct_answer'];
+                $wrong = array_diff([$choice1, $choice2, $choice3, $choice4], [$correct_answer]);
+                $result[] = [
+                    'id' => $value['ques_id'],
+                    'question_string' => $value['ques_name'],
+                    'choices' => [
+                        'correct' => $value['correct_answer'],
+                        'wrong' => $wrong
+                    ],
+                    'question_grade' => $value['ques_grade']
+                ];
+            }
         }
     }
     return json_encode($result);

@@ -44,7 +44,7 @@ $answers =   isset($_GET['user_answers'])?explode(',',$_GET['user_answers']):[];
 
                     <div id="question">
                         <h2><?php echo $question->question_string; ?></h2>
-                        <input id="choices-<?php echo $i;?>" type="radio" name="choices-<?php echo $i;?>" value="<?php echo $question->choices->correct;?>"><label style="background-color: darkseagreen;!important;" for="choices-0"><?php echo $question->choices->correct;echo $question->question_grade;?></label>
+                        <input id="choices-<?php echo $i;?>" type="radio" name="choices-<?php echo $i;?>" value="<?php echo $question->choices->correct;?>"><label style="background-color: darkseagreen;!important;" for="choices-0"><?php echo $question->choices->correct;?></label>
                         <?php foreach($question->choices->wrong as $j=>$wrong):?>
 
                             <?php if ($wrong == $answers[$i] && $answers[$i]!= $question->choices->correct):?>

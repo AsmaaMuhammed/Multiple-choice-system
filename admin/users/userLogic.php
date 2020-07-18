@@ -185,7 +185,6 @@ if (isset($_POST['answer_exam'])) {
     //send session data in post request
     $userId = $_POST['user_id'];
     $testId = $_POST['test_id'];
-
     $conn = new mysqli(SERVER,USER, PASSWORD, DB);
     // Check connection
     if ($conn->connect_error) {
@@ -217,7 +216,7 @@ if (isset($_POST['exam_status'])) {
     }
     $sql = "SELECT u.id
             FROM users_answers u 
-             WHERE u.id=? and u.test_id= ? LIMIT 1";
+             WHERE u.user_id=? and u.test_id= ? LIMIT 1";
 //    $user = getSingleRecord($sql, 'ii', [$userId, $testId]);
     $params = [$userId, $testId];
     $stmt = $conn->prepare($sql);
